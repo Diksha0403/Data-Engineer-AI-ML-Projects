@@ -32,38 +32,42 @@ Target:
      • 2 = Benign
      • 4 = Malignant
              
-Workflow :-
- Data Preparation
+Workflow
+=========
+ Data Preparation :
      • Convert raw .data file to .csv with headers
      • Replace missing values (?) with NaN
      • Ensure numeric type conversion for all feature columns
 
-Train-Test Split
+Train-Test Split :
      • Split into 70% train and 30% test
      • Use stratified sampling to preserve class balance
 
-Pipeline Construction
+Pipeline Construction :
      • Step 1: SimpleImputer(strategy="median") for missing value handling
      • Step 2: RandomForestClassifier with 300 estimators for classification
 
-Model Training & Evaluation
+Model Training & Evaluation :
      • Metrics: Accuracy, Confusion Matrix, Classification Report
      • Feature Importance Plot: Shows most influential features
 
-Model Saving & Loading
+Model Saving & Loading :
      • Save model with Joblib
      • Load model for future predictions without retraining
    
 Running the Project
-     Prepare CSV (Only Once)
-     from breast_cancer_pipeline import data_file_to_csv
-     data_file_to_csv()
-     Train & Evaluate Model
-     python breast_cancer_pipeline.py
+=====================
+     Prepare CSV (Only Once) :
+         from breast_cancer_pipeline import data_file_to_csv
+         data_file_to_csv()
 
- Expected output:
-     Train Accuracy ::  1.0
-     Test Accuracy  ::  0.97
+     Train & Evaluate Model :
+         python breast_cancer_pipeline.py
+
+     Expected output:
+         Train Accuracy ::  1.0
+         Test Accuracy  ::  0.97
+
      Classification Report:
                    precision    recall  f1-score   support
      ...
@@ -72,16 +76,17 @@ Running the Project
      Model saved to bc_rf_pipeline.joblib
      Loaded model prediction for first test sample: 2
 
- Visualizations
+ Visualizations :
      • Feature Importance (Random Forest)
      • Confusion Matrix with Matplotlib
 
- Model Storage
+ Model Storage :
      • Model is saved as bc_rf_pipeline.joblib
      • Can be loaded anytime for prediction without retraining:
-     from breast_cancer_pipeline import load_model
-     model = load_model("bc_rf_pipeline.joblib")
-     Sample Prediction
+           from breast_cancer_pipeline import load_model
+           model = load_model("bc_rf_pipeline.joblib")
+
+ Sample Prediction :
      sample = test_x.iloc[[0]]
      pred = model.predict(sample)
      print("Prediction:", pred[0])  # 2 (Benign) or 4 (Malignant)
