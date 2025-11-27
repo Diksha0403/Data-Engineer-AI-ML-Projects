@@ -1,11 +1,19 @@
+######################################################## 
+# Required Python Packages 
+########################################################
+
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 from sklearn import svm
 from sklearn import metrics
 
-border = "*"*50
+#####################################################################################################
+# Constants and file name
+#####################################################################################################
+BORDER="-"*50
+FILENAME="breast-cancer-wisconsin.csv"
 
-def MarvellousSVM():
+def Breast_Cancer_Diagnosis_SVM():
     # Load Dataset
     cancer = datasets.load_breast_cancer()
 
@@ -46,12 +54,18 @@ def MarvellousSVM():
     print(border)
     print("Accuracy of the model is: ",metrics.accuracy_score(y_test,y_pred)*100)
 
+#---------------------------------------------------------------------------------------------------------
+#  Function Name    : Main function 
+#---------------------------------------------------------------------------------------------------------
 
 def main():
-    print("____________Marvellous Support Vector Machine____________")
+    print("____________Breast Cancer Diagnosis Support Vector Machine____________")
 
-    MarvellousSVM()
-
+    Breast_Cancer_Diagnosis_SVM()
+    
+#---------------------------------------------------------------------------------------------------------
+#   Main entry point of the program
+#---------------------------------------------------------------------------------------------------------
 
 if __name__=="__main__":
     main()
