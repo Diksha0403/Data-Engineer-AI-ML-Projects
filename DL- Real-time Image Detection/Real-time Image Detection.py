@@ -1,6 +1,14 @@
+"""-----------------------------------------------------------------------------------------------------
+                    Project - real-time image classification system 
+                    ML Model - Using  Convolutional Neural Network (CNN)
+                    (Author name - Diksha Kolikal)
+--------------------------------------------------------------------------------------------------------
+Problem statement: Use a pre-trained CNN model (MobileNetV2) to recognize objects without 
+                   having to train from scratch
+--------------------------------------------------------------------------------------------------------"""
+
 ####################################################################
-#   real-time image classification system 
-#   Using  Convolutional Neural Network (CNN)
+#    Importing Libraries
 ####################################################################
 
 import cv2
@@ -61,3 +69,4 @@ def main():
 
 if __name__=="__main__":
     main()
+
