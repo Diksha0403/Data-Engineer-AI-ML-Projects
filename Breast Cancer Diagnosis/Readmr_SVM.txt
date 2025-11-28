@@ -1,0 +1,102 @@
+Title :- Breast Cancer Diagnosis using Support Vector Machine (SVM)
+======================================================================
+
+This project implements a simple and effective machine learning approach to classify breast cancer tumors as **Benign** or **Malignant** using the Breast Cancer Wisconsin dataset.
+
+---
+
+It follows a basic ML workflow by :
+    • Loading dataset from Scikit-learn
+    • Understanding feature names and dataset structure
+    • Splitting data into training & testing sets
+    • Training a Support Vector Machine classifier (SVM)
+    • Evaluating model accuracy using `metrics.accuracy_score()`
+
+---
+
+Dependencies :
+
+Install the required Python packages before running the project:
+
+    pip install scikit-learn numpy
+
+---
+
+Dataset Information :
+
+    Source: Sklearn Breast Cancer Wisconsin Dataset
+    
+    Features (30):
+    Numerical measurements of cell nuclei (e.g., radius, texture, perimeter, area, smoothness, etc.)
+    
+    Target:
+        • 0 = Malignant
+        • 1 = Benign
+
+---
+
+Workflow
+=================
+
+1. Dataset Loading & Inspection :
+
+    • Load dataset with `datasets.load_breast_cancer()`
+    • Display feature names
+    • Display target names
+    • Print dataset shape
+    • Show first 5 records
+    • Show target label array
+
+---
+
+2. Train-Test Split :
+
+    • Split into 70% Train and 30% Test
+    • `random_state=109` ensures reproducibility
+
+---
+
+3. Model Construction (SVM) :
+
+    • Algorithm: Support Vector Machine
+    • Kernel: `"linear"`
+    • `clf = svm.SVC(kernel='linear')`
+
+---
+
+4. Training & Evaluation :
+
+    • Train: `clf.fit(x_train, y_train)`
+    • Predict: `clf.predict(x_test)`
+    • Evaluate using Accuracy Score
+    
+    Typical accuracy ranges between 95%–97%.
+
+---
+
+Running the Project
+=====================
+Run the script directly:
+    python BreastCancerSupportVector.py
+
+The output includes:
+    • Dataset feature information
+    • First few samples
+    • Target labels
+    • Final accuracy of the SVM model
+
+---
+
+Use Cases :
+
+    • Medical ML classification
+    • Understanding SVM for beginners
+    • Academic assignments and ML demonstrations
+    • Basic binary classification modeling
+
+---
+
+Author
+Diksha Kolikal
+
+---
